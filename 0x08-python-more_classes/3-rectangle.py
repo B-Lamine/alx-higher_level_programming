@@ -64,3 +64,8 @@ class Rectangle:
                 rectangle's area.
         """
         return self.__height * self.__width
+
+    def __str__(self):
+        """str: sequences of # width times, over height times line"""
+        return ('#' * self.__width + '\n') * (self.__height - 1) + ('#' *
+                self.__width)
