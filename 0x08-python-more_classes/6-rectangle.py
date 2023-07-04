@@ -7,8 +7,13 @@ This method contains the simplest Rectangle class
 
 class Rectangle:
     """
-        define Rectangle
+        define Rectangle.
+
+        Attributes:
+            number_of_instances (int): number of objects created.
     """
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """
             instantiation method.
@@ -17,11 +22,13 @@ class Rectangle:
                 width (integer, optional): width of the rectangle.
                 height (integer, optional: height of the rectange)
         """
+        Rectangle.number_of_instances += 1
         self.width = width
         self.height = height
 
     def __del__(self):
         """Print message upon instance deletion """
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
     @property
