@@ -11,8 +11,10 @@ class Rectangle:
 
         Attributes:
             number_of_instances (int): number of objects created.
+            print_symbol (any type): object used to print rectangle.
     """
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """
@@ -77,12 +79,14 @@ class Rectangle:
         return self.__height * self.__width
 
     def __str__(self):
-        """str: sequences of # width times, over height times line"""
+        """str: sequences of print_symbol width times, over height times line
+        """
         if (self.__height == 0) or (self.__width == 0):
             return ''
         else:
-            return ('#' * self.__width + '\n') * (self.__height - 1) + (
-                '#' * self.__width)
+            return (str(self.print_symbol) * self.__width + '\n') *\
+                (self.__height - 1) + (str(self.print_symbol) *
+                                       self.__width)
 
     def __repr__(self):
         """string representation of the rectangle"""
