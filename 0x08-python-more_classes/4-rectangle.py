@@ -72,3 +72,8 @@ class Rectangle:
         else:
             return ('#' * self.__width + '\n') * (self.__height - 1) + (
                 '#' * self.__width)
+
+    def __repr__(self):
+        """string representation of the rectangle"""
+        return "Rectangle(" + str(self.__width) + "," + str(self.__height) +\
+            ")"
