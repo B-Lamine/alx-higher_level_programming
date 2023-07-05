@@ -1,0 +1,31 @@
+==============================
+    How say_my_name works:
+==============================
+
+It must be imported as follows:
+
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+It takes two string arguments:
+
+    >>> say_my_name("Jon", "Doe")
+    My name is Jon Doe
+
+The last name is empty by default and so can be omitted:
+
+    >>> say_my_name("Jon") #doctest: +NORMALIZE_WHITESPACE
+    My name is Jon
+
+the first name must be a string:
+
+    >>> say_my_name(12, "Doe") #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+So does the last name:
+
+    >>> say_my_name("Jon", 12) #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
