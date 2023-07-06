@@ -1,0 +1,39 @@
+==============================
+    How print_square works
+==============================
+
+Import the module as follows to avoid SyntaxError:
+
+    >>> print_square = __import__("4-print_square").print_square
+
+Print_square prints a square with '#' units of given size:
+
+    >>> print_square(3)
+    ###
+    ###
+    ###
+
+A square of size 0 is just an empty string:
+
+    >>> print_square(0)
+
+Floats are not accepted as size:
+
+    >>> print_square(3.2) #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+Size must be an integer:
+
+    >>> print_square('string') #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+Size cannot be negative:
+
+    >>> print_square(-2) #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    ValueError: size must be >= 0
