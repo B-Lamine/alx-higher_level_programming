@@ -30,3 +30,8 @@ class TestMaxInteger(unittest.TestCase):
         """Test a list of strings.
         """
         self.assertEqual(max_integer(['abc', 'c', 'bb']), 'c')
+
+    def test_noneList(self):
+        """Test none list argument.
+        """
+        self.assertRaises(TypeError, max_integer, 123)
