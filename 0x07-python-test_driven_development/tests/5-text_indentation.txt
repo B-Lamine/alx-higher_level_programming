@@ -1,0 +1,34 @@
+==================================
+    How text_indentation works
+==================================
+
+The module must be imported as follows:
+
+    >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+The function takes in a string, and at each '.', '?' or ':' it adds two
+newlines:
+
+    >>> text_indentation("lorem something in latin. It goes on ?")
+    lorem something in latin.
+    <BLANKLINE>
+    It goes on?
+    <BLANKLINE>
+
+Any spaces found at the beginning or end of the line (delimited by previous
+characters) are sliced off:
+
+    >>> text_indentation(" spaces at beginning : spaces at end of line . Check ?")
+    spaces at beginning:
+    <BLANKLINE>
+    spaces at end of line.
+    <BLANKLINE>
+    Check?
+    <BLANKLINE>
+
+The function only takes strings as arguments:
+
+    >>> text_indentation(1234) #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
