@@ -4,6 +4,8 @@
 
 
 class MyList(list):
+    """This is a subclass of the built-in list class.
+    """
     def print_sorted(self):
         """print sorted list.
         """
