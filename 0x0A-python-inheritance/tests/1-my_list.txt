@@ -1,0 +1,60 @@
+===================================
+    1-my_list: how does it work
+===================================
+
+First import the module as follows:
+
+    >>> MyList = __import__("1-my_list").MyList
+
+Mylist is a subclass of built-in List class:
+    
+    >>> issubclass(MyList, list)
+    True
+
+Instantiating the class creates a list object:
+
+    >>> test_list = MyList()
+    >>> isinstance(test_list, list)
+    True
+
+This class inherits all methods  of the list class:
+
+    >>> test_list.append(1)
+    >>> test_list.append(2)
+    >>> test_list.append(3)
+    >>> test_list.append(4)
+    >>> test_list.pop()
+    4
+    >>> print(test_list)
+    [1, 2, 3]
+    >>> test_list.sort(reverse=True)
+    >>> test_list
+    [3, 2, 1]
+
+It has a unique method which prints the list sorted in ascending order without
+modifying it list the list method sort():
+
+    >>> test_list.print_sorted()
+    [1, 2, 3]
+    >>> test_list
+    [3, 2, 1]
+
+It also takes in string elements:
+
+    >>> newlist = MyList()
+    >>> newlist.append('a')
+    >>> newlist.append('bb')
+    >>> newlist.append('aac')
+    >>> newlist.print_sorted()
+    ['a', 'aac', 'bb']
+
+But not lists of mixed types:
+
+    >>> mixed_list = MyList()
+    >>> mixed_list.append(2)
+    >>> mixed_list.append('abc')
+    >>> mixed_list.append([0, 1])
+    >>> mixed_list.print_sorted() #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: '<' not supported between instances of '...' and '...'
