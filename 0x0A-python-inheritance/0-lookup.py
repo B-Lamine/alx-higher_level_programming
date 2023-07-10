@@ -6,4 +6,4 @@
 def lookup(obj):
     """List available attributes of an object.
     """
-    return list(type(obj).__dict__)
+    return dir(obj)
