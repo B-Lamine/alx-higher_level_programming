@@ -1,0 +1,44 @@
+=====================================
+    7-base_geometry: how it works
+=====================================
+
+First implement the module likewise:
+
+    >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+Instantiation:
+
+    >>> bg = BaseGeometry()
+
+The area() method raises an Exception and it doens't take arguments:
+
+    >>> bg.area() #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
+
+The integer_validator mthod takes a string argument first, and its integer
+value:
+
+    >>> bg.integer_validator("distance", 24)
+
+The integer must be positive:
+
+    >>> bg.integer_validator("distance", -1) #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    ValueError: distance must be greater than 0
+
+and not zero:
+
+    >>> bg.integer_validator("distance", 0) #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    ValueError: distance must be greater than 0
+
+None integer types for value argument also raises an exception:
+
+    >>> bg.integer_validator("distance", '123') #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: distance must be an integer
