@@ -6,6 +6,8 @@
 def pascal_triangle(n):
     """make the pascal triangle as a list of lists.
     """
+    if n <= 0:
+        return []
     pascal_triangle = [[1], [1, 1]]
     tmp_list = [1, 1]
     for i in range(2, n):
