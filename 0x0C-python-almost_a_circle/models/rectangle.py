@@ -27,6 +27,13 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+    def __str__(self):
+        """string format representation of the rectangle object.
+        """
+        return "[Rectangle] (" + str(self.id) + ") " + str(self.__x) + "/" +\
+            str(self.__y) + " - " + str(self.__width) + "/" +\
+            str(self.__height)
+
     def display(self):
         """draw rectangle object with '#' units.
         """
