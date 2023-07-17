@@ -27,6 +27,12 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+    def display(self):
+        """draw rectangle object with '#' units.
+        """
+        for i in range(self.__height):
+            print('#' * self.__width)
+
     def area(self):
         """compute area of the rectangle object.
         """
