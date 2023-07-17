@@ -27,9 +27,20 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """update attributes depending on the number of arguments.
         """
+        if len(args) == 0:
+            if 'id' in kwargs:
+                self.id = kwargs['id']
+            if 'width' in kwargs:
+                self.width = kwargs['width']
+            if 'height' in kwargs:
+                self.height = kwargs['height']
+            if 'x' in kwargs:
+                self.x = kwargs['x']
+            if 'y' in kwargs:
+                self.y = kwargs['y']
         if len(args) > 0:
             self.id = args[0]
         if len(args) > 1:
