@@ -47,3 +47,11 @@ class Base:
         filename = cls.__name__ + ".json"
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(json_dict)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """create instance of cls via dictionary.
+        """
+        dummy_obj = cls(0, 0)
+        dummy_obj.update(**dictionary)
+        return dummy_obj
