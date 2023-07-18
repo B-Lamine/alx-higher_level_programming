@@ -27,6 +27,12 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+    def to_dictionary(self):
+        """get dictionary representation of rectangle instance attributes.
+        """
+        return {'id': self.id, 'width': self.__width,
+                'height': self.__height, 'x': self.__x, 'y': self.__y}
+
     def update(self, *args, **kwargs):
         """update attributes depending on the number of arguments.
         """
