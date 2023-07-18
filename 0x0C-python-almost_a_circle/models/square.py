@@ -28,6 +28,12 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def to_dictionary(self):
+        """get dictionary representation of square instance attributes.
+        """
+        return {'id': self.id, 'size': self.size, 'x': self.x,
+                'y': self.y}
+
     def update(self, *args, **kwargs):
         """update attributes depending on the number of arguments.
         """
