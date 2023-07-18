@@ -2,6 +2,8 @@
 """This module contains the class: Base.
 """
 
+import json
+
 
 class Base:
     """Base class that manages id of all subclasses/objects.
@@ -23,4 +25,4 @@ class Base:
         """
         if (list_dictionaries is None) or (len(list_dictionaries) == 0):
             return "[]"
-        return str(list_dictionaries)
+        return json.dumps(list_dictionaries)
