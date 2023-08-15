@@ -1,0 +1,1 @@
+SQL basics practice.
