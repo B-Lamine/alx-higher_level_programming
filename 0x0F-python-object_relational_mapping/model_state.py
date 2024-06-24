@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This program defines the class State, which is mapped to the table
-   of the same name via SQLAlchemy ORM.
+of the same name via SQLAlchemy ORM.
 """
 
 
