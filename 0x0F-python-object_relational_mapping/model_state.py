@@ -22,6 +22,11 @@ session = Session()
 
 class State(Base):
     """Maps to the States table of the MySQL database.
+
+    Attributes:
+        __tablename__ (str): table name.
+        id (int): table's id.
+        name (str): state's name.
     """
     __tablename__ = 'states'
     id = Column(Integer, nullable=False, unique=True, primary_key=True)
