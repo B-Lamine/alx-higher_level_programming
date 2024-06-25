@@ -15,12 +15,14 @@ class City(Base):
     Attributes:
         __tablename__ (str): table name.
         id (int): table's id.
-        name (str): state's name.
+        name (str): city's name.
+        state_id (int): state's id.
     """
     __tablename__ = 'cities'
     id = Column(Integer, nullable=False, unique=True, primary_key=True)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
     state = relationship('State', back_populates='cities')
+
 
 State.cities = relationship('City', order_by=City.id, back_populates='state')
