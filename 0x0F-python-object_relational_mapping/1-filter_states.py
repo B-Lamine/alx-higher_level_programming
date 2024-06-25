@@ -15,7 +15,7 @@ def db_management(args):
                        passwd=args[2], db=args[3])
     cur = db.cursor()
     cur.execute("SELECT * FROM states\
-                WHERE name LIKE 'N%'\
+                WHERE name LIKE BINARY 'N%'\
                 ORDER BY id ASC")
     rows = cur.fetchall()
     for row in rows:
