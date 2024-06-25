@@ -15,7 +15,7 @@ def db_management(args):
                        passwd=args[2], db=args[3])
     cur = db.cursor()
     cur.execute("SELECT * FROM states\
-                WHERE SUBSTRING(name, 1, 1)='N'\
+                WHERE name LIKE 'N%'\
                 ORDER BY id ASC")
     rows = cur.fetchall()
     for row in rows:
