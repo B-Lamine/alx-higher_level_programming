@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+""" Get type and content from URL.
+"""
+
+
 import urllib.request
 
 
