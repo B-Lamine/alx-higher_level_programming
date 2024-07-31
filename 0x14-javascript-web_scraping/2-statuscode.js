@@ -6,5 +6,7 @@ const options = {
   method: 'GET'
 };
 request(options, function (err, response, body) {
-  console.log('code :', response.statusCode);
+  if (err) {
+    console.error(err);
+  } else console.log('code :', response.statusCode);
 });
